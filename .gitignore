@@ -1,0 +1,12 @@
+# Dependencies
+node_modules
+
+# Trash
+.DS_Store
+
+# Coverage generated files
+coverage
+
+# Build
+/dist-browser/
+/dist-node/
