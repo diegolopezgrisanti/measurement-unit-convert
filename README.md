@@ -1,6 +1,6 @@
 # Measurement Unit Converter
 ---
-It is a npm package for converting units, including: Length, Mass, and Volume.
+It is a npm package for converting units, including: Area, Length, Mass, Speed, and Volume.
 ## Install
 ---
 ```
@@ -13,6 +13,25 @@ This line of code should be added at the begin of the code. In this example we i
 ```typescript
 import { LengthUnit, convertUnits } from './measurement-unit-converter';
 ```
+---
+#### Area
+```typescript
+const squareInches = 10;
+const squareMillimeters = convertUnits(squareInches, AreaUnit.SQUARE_INCH, AreaUnit.SQUARE_MILLIMETER);
+console.log(`${squareInches} square inches are ${squareMillimeters} square millimeters`); // Output: "10 square inches are 6451.6 square millimeters"
+```
+| Enum AreaUnit |
+| --- |
+| SQUARE_KILOMETER |
+| HECTARE |
+| SQUARE_METER |
+| SQUARE_CENTIMETER |
+| SQUARE_MILLIMETER |
+| SQUARE_MILE |
+| ACRE |
+| SQUARE_YARD |
+| SQUARE_FOOT |
+| SQUARE_INCH |
 ---
 #### Length
 ```typescript
@@ -52,6 +71,20 @@ console.log(`${pounds} pounds are ${kilograms} kilograms`); // Output: "10 pound
 | STONE |
 | POUND |
 | OUNCE |
+---
+#### Speed
+```typescript
+const kilometersPerHour = 10;
+const metersPerSecond = convertUnits(pints, SpeedUnit.KILOMETER_PER_HOUR, SpeedUnit.METER_PER_SECOND);
+console.log(`${kilometersPerHour} kilometers per hour are ${metersPerSecond} meters per second`); // Output: "10 kilometers per hour are 2.7778 meters per second"
+```
+| Enum SpeedUnit |
+| --- |
+| KILOMETER_PER_HOUR |
+| METER_PER_SECOND |
+| MILE_PER_HOUR |
+| KNOT |
+| FEET_PER_SECOND |
 ---
 #### Volume
 ```typescript

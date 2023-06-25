@@ -1,4 +1,4 @@
-import { LengthUnit, WeightUnit, VolumeUnit, convertUnits } from '../src/measurement-unit-converter'
+import { LengthUnit, WeightUnit, VolumeUnit, AreaUnit, SpeedUnit, convertUnits } from '../src/measurement-unit-converter'
 
 describe('convert-units', () => {
     test('should convert meters to feets', () => {
@@ -27,4 +27,23 @@ describe('convert-units', () => {
 
         expect(actualGallons).toBeCloseTo(expectedGallons);
     });
+
+        test('should convert square inches to square millimeter', () => {
+        const squareInches = 10;
+        const expectedSquareMillimeters = 10*(0.000645160000005161/0.000001); // 6451.60000005161
+
+        const actualSquareMillimeters = convertUnits(squareInches, AreaUnit.SQUARE_INCH, AreaUnit.SQUARE_MILLIMETER);
+
+        expect(actualSquareMillimeters).toBeCloseTo(expectedSquareMillimeters);
+    });
+
+    test('should convert kilometers per hour to meters per second', () => {
+        const kilometersPerHour = 10;
+        const expectedMetersPerSecond = 10*(1/3.6); // 2.77777777777778
+
+        const actualMetersPerSecond = convertUnits(kilometersPerHour, SpeedUnit.KILOMETER_PER_HOUR, SpeedUnit.METER_PER_SECOND);
+
+        expect(actualMetersPerSecond).toBeCloseTo(expectedMetersPerSecond);
+    });
+
 });

@@ -35,6 +35,27 @@ export enum VolumeUnit {
     CUBIC_INCH = 'cubic_inch',
 };
 
+export enum AreaUnit {
+    SQUARE_KILOMETER = 'square_kilometer',
+    HECTARE = 'hectare',
+    SQUARE_METER = 'square_meter',
+    SQUARE_CENTIMETER = 'square_centimeter',
+    SQUARE_MILLIMETER = 'square_millimeter',
+    SQUARE_MILE = 'square_mile',
+    ACRE = 'acre',
+    SQUARE_YARD = 'square_yard',
+    SQUARE_FOOT = 'square_foot',
+    SQUARE_INCH = 'square_inch',
+};
+
+export enum SpeedUnit {
+    KILOMETER_PER_HOUR = 'kilometer_per_hour',
+    METER_PER_SECOND = 'meter_per_second',
+    MILE_PER_HOUR = 'mile_per_hour',
+    KNOT = 'knot',
+    FOOT_PER_SECOND = 'foot_per_second',
+};
+
 const lengthConversionRates = {
     [LengthUnit.KILOMETER]: 1000,
     [LengthUnit.METER]: 1,
@@ -72,7 +93,28 @@ const volumeConversionRates = {
     [VolumeUnit.CUBIC_INCH]: 0.0163871,
 };
 
-type Unit = LengthUnit | WeightUnit | VolumeUnit;
+const areaConversionRates = {
+    [AreaUnit.SQUARE_KILOMETER]: 1000000, // 1 Square Kilometer is equivalent to 1000000 Square Meters
+    [AreaUnit.HECTARE]: 10000, // 1 Hectare is equivalent to 10000 Square Meters
+    [AreaUnit.SQUARE_METER]: 1,
+    [AreaUnit.SQUARE_CENTIMETER]: 0.0001, // 1 Square Centimeter is equivalent to 0.0001 Square Meters
+    [AreaUnit.SQUARE_MILLIMETER]: 0.000001, // 1 Square Millimeter is equivalent to 1E-6 Square Meters
+    [AreaUnit.SQUARE_MILE]: 2589988.110336, // 1 Square Mile is equivalent to 2589988.1103 Square Meters
+    [AreaUnit.ACRE]: 4046.85611888692, // 1 Acre is equivalent to 4046.8561 Square Meters
+    [AreaUnit.SQUARE_YARD]: 0.836127359996498, // 1 Square Yard is equivalent to 0.8361 Square Meters
+    [AreaUnit.SQUARE_FOOT]: 0.0929030400007433, // 1 Square Foot is equivalent to 0.0929 Square Meters
+    [AreaUnit.SQUARE_INCH]: 0.000645160000005161, // 1 Square Inch is equivalent to 0.0006 Square Meters
+};
+
+const speedConversionRates = {
+    [SpeedUnit.KILOMETER_PER_HOUR]: 1,
+    [SpeedUnit.METER_PER_SECOND]: 3.6, // 1 Meter per Second is equivalent to 3.6 Kilometers per Hour
+    [SpeedUnit.MILE_PER_HOUR]: 1.609344, // 1 Mile per Hour is equivalent to 1.6093 Kilometers per Hour
+    [SpeedUnit.KNOT]: 1.852, // 1 Nautical Mile Per Hour is equivalent to 1.852 Kilometers per Hour
+    [SpeedUnit.FOOT_PER_SECOND]: 1.09728000000439, // 1 foot per second is equal to 1.09728000000439 kilometers per hour
+};
+
+type Unit = LengthUnit | WeightUnit | VolumeUnit | AreaUnit | SpeedUnit;
 
 export function convertUnits(value: number, fromUnit: Unit, toUnit: Unit): number {
     if (!isUnitValid(fromUnit) || !isUnitValid(toUnit)) {
@@ -94,11 +136,21 @@ export function convertUnits(value: number, fromUnit: Unit, toUnit: Unit): numbe
         return value * conversionRate;
     }
 
+    if (isAreaUnit(fromUnit) && isAreaUnit(toUnit)) {
+        const conversionRate = areaConversionRates[fromUnit] / areaConversionRates[toUnit];
+        return value * conversionRate;
+    }
+
+    if (isSpeedUnit(fromUnit) && isSpeedUnit(toUnit)) {
+        const conversionRate = speedConversionRates[fromUnit] / speedConversionRates[toUnit];
+        return value * conversionRate;
+    }
+
     throw new Error('Cannot convert between different units');
 }
 
 function isUnitValid(unit: Unit): boolean {
-    return isLengthUnit(unit) || isWeightUnit(unit) || isVolumeUnit(unit);
+    return isLengthUnit(unit) || isWeightUnit(unit) || isVolumeUnit(unit) || isAreaUnit(unit) || isSpeedUnit(unit);
 }
 
 function isLengthUnit(unit: Unit): unit is LengthUnit {
@@ -111,4 +163,12 @@ function isWeightUnit(unit: Unit): unit is WeightUnit {
 
 function isVolumeUnit(unit: Unit): unit is VolumeUnit {
     return Object.values(VolumeUnit).includes(unit as VolumeUnit);
+};
+
+function isAreaUnit(unit: Unit): unit is AreaUnit {
+    return Object.values(AreaUnit).includes(unit as AreaUnit);
+};
+
+function isSpeedUnit(unit: Unit): unit is SpeedUnit {
+    return Object.values(SpeedUnit).includes(unit as SpeedUnit);
 };

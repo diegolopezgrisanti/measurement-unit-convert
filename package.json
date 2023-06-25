@@ -1,12 +1,14 @@
 {
   "name": "measurement-unit-converter",
-  "version": "1.0.0",
-  "description": "It is a npm package for converting units, including Length, Mass, Volume",
+  "version": "1.1.0",
+  "description": "It is a npm package for converting units, including Area, Length, Mass, Speed, Volume",
   "keywords": [
     "units",
     "converter",
+    "area",
     "length",
     "mass",
+    "speed",
     "volume"
   ],
   "license": "MIT",
