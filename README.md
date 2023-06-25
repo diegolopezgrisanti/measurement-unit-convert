@@ -84,7 +84,7 @@ console.log(`${kilometersPerHour} kilometers per hour are ${metersPerSecond} met
 | METER_PER_SECOND |
 | MILE_PER_HOUR |
 | KNOT |
-| FEET_PER_SECOND |
+| FOOT_PER_SECOND |
 ---
 #### Volume
 ```typescript
