@@ -49,7 +49,7 @@ console.log(`${meters} meters are ${feets} feets`); // Output: "10 meters are 32
 | NANOMETER |
 | MILE |
 | YARD |
-| FEET |
+| FOOT |
 | INCH |
 | NAUTICAL_MILE |
 ---
@@ -99,5 +99,5 @@ console.log(`${pints} pints are ${cubicCentimeters} cubic centimeters`); // Outp
 | GALLON |
 | PINT |
 | CUBIC_CENTIMETER |
-| CUBIC_FEET |
+| CUBIC_FOOT |
 | CUBIC_INCH |
