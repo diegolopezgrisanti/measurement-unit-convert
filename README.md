@@ -36,7 +36,7 @@ console.log(`${squareInches} square inches are ${squareMillimeters} square milli
 #### Length
 ```typescript
 const meters = 10;
-const feets = convertUnits(meters, LengthUnit.METER, LengthUnit.FEET);
+const feets = convertUnits(meters, LengthUnit.METER, LengthUnit.FOOT);
 console.log(`${meters} meters are ${feets} feets`); // Output: "10 meters are 32.8084 feets"
 ```
 | Enum LengthUnit |
