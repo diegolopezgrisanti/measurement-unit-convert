@@ -1,4 +1,4 @@
-import { LengthUnit, WeightUnit, VolumeUnit, AreaUnit, SpeedUnit, convertUnits } from '../src/measurement-unit-converter'
+import { LengthUnit, WeightUnit, VolumeUnit, AreaUnit, SpeedUnit, TimeUnit, convertUnits } from '../src/measurement-unit-converter'
 
 describe('convert-units', () => {
     test('should convert meters to feets', () => {
@@ -28,7 +28,7 @@ describe('convert-units', () => {
         expect(actualGallons).toBeCloseTo(expectedGallons);
     });
 
-        test('should convert square inches to square millimeter', () => {
+    test('should convert square inches to square millimeter', () => {
         const squareInches = 10;
         const expectedSquareMillimeters = 10*(0.000645160000005161/0.000001); // 6451.60000005161
 
@@ -46,4 +46,12 @@ describe('convert-units', () => {
         expect(actualMetersPerSecond).toBeCloseTo(expectedMetersPerSecond);
     });
 
+    test('should convert years to microseconds', () => {
+        const years = 10;
+        const expectedMicroseconds = 10*(31556952/1e-6); // 315569520000000
+
+        const actualMicroseconds = convertUnits(years, TimeUnit.YEAR, TimeUnit.MICROSECOND);
+
+        expect(actualMicroseconds).toBeCloseTo(expectedMicroseconds);
+    });
 });

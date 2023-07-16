@@ -1,6 +1,6 @@
 # Measurement Unit Converter
 ---
-It is a npm package for converting units, including: Area, Length, Mass, Speed, and Volume.
+It is a npm package for converting units, including: Area, Length, Mass, Speed, Time, and Volume.
 ## Install
 ---
 ```
@@ -85,6 +85,27 @@ console.log(`${kilometersPerHour} kilometers per hour are ${metersPerSecond} met
 | MILE_PER_HOUR |
 | KNOT |
 | FOOT_PER_SECOND |
+---
+#### Time
+```typescript
+const years = 10;
+const microseconds = convertUnits(years, TimeUnit.YEAR, TimeUnit.MICROSECOND);
+console.log(`${years} years are ${microseconds} microseconds`); // Output: "10 years are 315569520000000 microseconds"
+```
+| Enum TimeUnit |
+| --- |
+| NANOSECOND |
+| MICROSECOND |
+| MILLISECOND |
+| SECOND |
+| MINUTE |
+| HOUR |
+| DAY |
+| WEEK |
+| MONTH |
+| YEAR |
+| DECADE |
+| CENTURY |
 ---
 #### Volume
 ```typescript
