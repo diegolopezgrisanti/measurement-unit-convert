@@ -1,6 +1,6 @@
 # Measurement Unit Converter
 ---
-It is a npm package for converting units, including: Area, Length, Mass, Speed, Time, and Volume.
+It is a npm package for converting units, including: Area, Length, Mass, Speed, Temperature, Time, and Volume.
 ## Install
 ---
 ```
@@ -85,6 +85,20 @@ console.log(`${kilometersPerHour} kilometers per hour are ${metersPerSecond} met
 | MILE_PER_HOUR |
 | KNOT |
 | FOOT_PER_SECOND |
+---
+#### Temperature
+```typescript
+const fahrenheit = 10;
+const kelvin = convertUnits(fahrenheit, TemperatureUnit.FAHRENHEIT, TemperatureUnit.KELVIN);
+console.log(`${fahrenheit} fahrenheit are ${kelvin} kelvin`); // Output: "10 fahrenheit are 260.92777777777775 kelvin"
+```
+| Enum TemperatureUnit |
+| --- |
+| CELSIUS |
+| FAHRENHEIT |
+| KELVIN |
+| RANKINE |
+| REAUMUR |
 ---
 #### Time
 ```typescript

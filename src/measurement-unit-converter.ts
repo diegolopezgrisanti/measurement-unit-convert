@@ -4,6 +4,7 @@ import { VolumeUnit, volumeConversionRates } from './units/volume-units';
 import { AreaUnit, areaConversionRates } from './units/area-units';
 import { SpeedUnit, speedConversionRates } from './units/speed-units';
 import { TimeUnit, timeConversionRates } from './units/time-units';
+import { TemperatureUnit, temperatureConversionRates, convertTemperature } from './units/temperature-units';
 
 type ConversionRate = {
     [unit: string]: number;
@@ -16,9 +17,10 @@ const conversionRates: Record<string, ConversionRate> = {
     area: areaConversionRates,
     speed: speedConversionRates,
     time: timeConversionRates,
+    temperature: temperatureConversionRates,
 };
 
-type Unit = LengthUnit | WeightUnit | VolumeUnit | AreaUnit | SpeedUnit | TimeUnit;
+type Unit = LengthUnit | WeightUnit | VolumeUnit | AreaUnit | SpeedUnit | TimeUnit | TemperatureUnit;
 
 export function convertUnits(value: number, fromUnit: Unit, toUnit: Unit): number {
     const fromCategory = getCategoryFromUnit(fromUnit);
@@ -26,6 +28,10 @@ export function convertUnits(value: number, fromUnit: Unit, toUnit: Unit): numbe
 
     if (fromCategory !== toCategory) {
         throw new Error('Cannot convert between different unit categories');
+    }
+
+    if (fromCategory === 'temperature') {
+        return convertTemperature(value, fromUnit as TemperatureUnit, toUnit as TemperatureUnit);
     }
 
     const conversionRate = getConversionRate(fromCategory, fromUnit, toUnit);
@@ -56,4 +62,4 @@ function getConversionRate(category: string, fromUnit: Unit, toUnit: Unit): numb
     return null;
 }
 
-export { LengthUnit, WeightUnit, VolumeUnit, AreaUnit, SpeedUnit, TimeUnit };
+export { LengthUnit, WeightUnit, VolumeUnit, AreaUnit, SpeedUnit, TimeUnit, TemperatureUnit };

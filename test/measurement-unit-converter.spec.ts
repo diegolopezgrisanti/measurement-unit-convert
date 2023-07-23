@@ -1,4 +1,4 @@
-import { LengthUnit, WeightUnit, VolumeUnit, AreaUnit, SpeedUnit, TimeUnit, convertUnits } from '../src/measurement-unit-converter'
+import { LengthUnit, WeightUnit, VolumeUnit, AreaUnit, SpeedUnit, TimeUnit, TemperatureUnit, convertUnits } from '../src/measurement-unit-converter'
 
 describe('convert-units', () => {
     test('should convert meters to feets', () => {
@@ -53,5 +53,14 @@ describe('convert-units', () => {
         const actualMicroseconds = convertUnits(years, TimeUnit.YEAR, TimeUnit.MICROSECOND);
 
         expect(actualMicroseconds).toBeCloseTo(expectedMicroseconds);
+    });
+
+    test('should convert fahrenheit to kelvin', () => {
+        const fahrenheit = 10;
+        const expectedKelvin = (10-32) / 1.8 + 273.15; // 260.92777777777775
+
+        const actualKelvin = convertUnits(fahrenheit, TemperatureUnit.FAHRENHEIT, TemperatureUnit.KELVIN);
+        
+        expect(actualKelvin).toBeCloseTo(expectedKelvin);
     });
 });
