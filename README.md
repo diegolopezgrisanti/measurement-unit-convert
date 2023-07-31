@@ -1,22 +1,17 @@
 # Measurement Unit Converter
-[![npm version](https://badge.fury.io/js/measurement-unit-converter.svg)](https://badge.fury.io/js/measurement-unit-converter)
-
 It is a npm package for converting units, including: Area, Length, Mass, Speed, Temperature, Time, and Volume.
 > Adding the following function:
 > - Solve the problem of floating-point precision after unit conversion
 ## Install
----
 ```
 npm install measurement-unit-converter
 ```
 ## How to use
----
 #### Import
 This line of code should be added at the begin of the code. In this example we import the enum LengthUnit and the function convertUnits.
 ```typescript
 import { LengthUnit, convertUnits } from './measurement-unit-converter';
 ```
----
 #### Area
 ```typescript
 const squareInches = 10;
@@ -35,7 +30,6 @@ console.log(`${squareInches} square inches are ${squareMillimeters} square milli
 | SQUARE_YARD |
 | SQUARE_FOOT |
 | SQUARE_INCH |
----
 #### Length
 ```typescript
 const meters = 10;
@@ -55,7 +49,6 @@ console.log(`${meters} meters are ${feets} feets`); // Output: "10 meters are 32
 | FOOT |
 | INCH |
 | NAUTICAL_MILE |
----
 #### Mass
 ```typescript
 const pounds = 10;
@@ -74,7 +67,6 @@ console.log(`${pounds} pounds are ${kilograms} kilograms`); // Output: "10 pound
 | STONE |
 | POUND |
 | OUNCE |
----
 #### Speed
 ```typescript
 const kilometersPerHour = 10;
@@ -88,7 +80,6 @@ console.log(`${kilometersPerHour} kilometers per hour are ${metersPerSecond} met
 | MILE_PER_HOUR |
 | KNOT |
 | FOOT_PER_SECOND |
----
 #### Temperature
 ```typescript
 const fahrenheit = 10;
@@ -102,7 +93,6 @@ console.log(`${fahrenheit} fahrenheit are ${kelvin} kelvin`); // Output: "10 fah
 | KELVIN |
 | RANKINE |
 | REAUMUR |
----
 #### Time
 ```typescript
 const years = 10;
@@ -123,7 +113,6 @@ console.log(`${years} years are ${microseconds} microseconds`); // Output: "10 y
 | YEAR |
 | DECADE |
 | CENTURY |
----
 #### Volume
 ```typescript
 const pints = 10;
