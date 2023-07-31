@@ -5,9 +5,10 @@ import { AreaUnit, areaConversionRates } from './units/area-units';
 import { SpeedUnit, speedConversionRates } from './units/speed-units';
 import { TimeUnit, timeConversionRates } from './units/time-units';
 import { TemperatureUnit, temperatureConversionRates, convertTemperature } from './units/temperature-units';
+import { Decimal } from 'decimal.js';
 
 type ConversionRate = {
-    [unit: string]: number;
+    [unit: string]: Decimal;
 };
 
 const conversionRates: Record<string, ConversionRate> = {
@@ -40,7 +41,7 @@ export function convertUnits(value: number, fromUnit: Unit, toUnit: Unit): numbe
         throw new Error('Invalid conversion rate');
     }
 
-    return value * conversionRate;
+    return new Decimal(value).times(conversionRate).toNumber();
 }
 
 function getCategoryFromUnit(unit: Unit): string {
@@ -52,11 +53,11 @@ function getCategoryFromUnit(unit: Unit): string {
     throw new Error('Invalid unit');
 }
 
-function getConversionRate(category: string, fromUnit: Unit, toUnit: Unit): number | null {
+function getConversionRate(category: string, fromUnit: Unit, toUnit: Unit): Decimal | null {
     const categoryConversionRates = conversionRates[category as keyof typeof conversionRates];
 
     if (fromUnit in categoryConversionRates && toUnit in categoryConversionRates) {
-        return categoryConversionRates[fromUnit] / categoryConversionRates[toUnit];
+        return categoryConversionRates[fromUnit].div(categoryConversionRates[toUnit]);
     }
 
     return null;

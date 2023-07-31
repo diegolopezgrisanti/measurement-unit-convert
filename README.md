@@ -1,6 +1,9 @@
 # Measurement Unit Converter
----
+[![npm version](https://badge.fury.io/js/measurement-unit-converter.svg)](https://badge.fury.io/js/measurement-unit-converter)
+
 It is a npm package for converting units, including: Area, Length, Mass, Speed, Temperature, Time, and Volume.
+> Adding the following function:
+> - Solve the problem of floating-point precision after unit conversion
 ## Install
 ---
 ```
