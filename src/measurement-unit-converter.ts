@@ -5,6 +5,7 @@ import { AreaUnit, areaConversionRates } from './units/area-units';
 import { SpeedUnit, speedConversionRates } from './units/speed-units';
 import { TimeUnit, timeConversionRates } from './units/time-units';
 import { TemperatureUnit, temperatureConversionRates, convertTemperature } from './units/temperature-units';
+import { AngleUnit, angleConversionRates } from './units/angle-units';
 import { Decimal } from 'decimal.js';
 
 type ConversionRate = {
@@ -19,9 +20,10 @@ const conversionRates: Record<string, ConversionRate> = {
     speed: speedConversionRates,
     time: timeConversionRates,
     temperature: temperatureConversionRates,
+    angle: angleConversionRates,
 };
 
-type Unit = LengthUnit | WeightUnit | VolumeUnit | AreaUnit | SpeedUnit | TimeUnit | TemperatureUnit;
+type Unit = LengthUnit | WeightUnit | VolumeUnit | AreaUnit | SpeedUnit | TimeUnit | TemperatureUnit | AngleUnit;
 
 export function convertUnits(value: number, fromUnit: Unit, toUnit: Unit): number {
     const fromCategory = getCategoryFromUnit(fromUnit);
@@ -63,4 +65,4 @@ function getConversionRate(category: string, fromUnit: Unit, toUnit: Unit): Deci
     return null;
 }
 
-export { LengthUnit, WeightUnit, VolumeUnit, AreaUnit, SpeedUnit, TimeUnit, TemperatureUnit };
+export { LengthUnit, WeightUnit, VolumeUnit, AreaUnit, SpeedUnit, TimeUnit, TemperatureUnit, AngleUnit };

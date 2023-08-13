@@ -1,5 +1,5 @@
 # Measurement Unit Converter
-It is a npm package for converting units, including: Area, Length, Mass, Speed, Temperature, Time, and Volume.
+It is a npm package for converting units, including: Angle, Area, Length, Mass, Speed, Temperature, Time, and Volume.
 > Adding the following function:
 > - Solve the problem of floating-point precision after unit conversion
 ## Install
@@ -12,6 +12,31 @@ This line of code should be added at the begin of the code. In this example we i
 ```typescript
 import { LengthUnit, convertUnits } from './measurement-unit-converter';
 ```
+#### Angle
+```typescript
+const milliradians = 10;
+const circles = convertUnits(milliradians, AngleUnit.MILLIRADIAN, AngleUnit.CIRCLE);
+console.log(`${milliradians} milliradians are ${circles} circles`); // Output: "10 milliradians are 0.0015915494309189536 circles"
+```
+| Enum AngleUnit |
+| --- |
+| ARCMINUTE |
+| ARCSECOND |
+| CIRCLE |
+| DEGREE |
+| GON |
+| GRADIAN |
+| MILLIRADIAN |
+| MIL_NATO |
+| MIL_USSR |
+| MIL_SWEDEN |
+| OCTANT |
+| QUADRANT |
+| RADIAN |
+| REVOLUTION |
+| SEXTANT |
+| SIGN |
+| TURN |
 #### Area
 ```typescript
 const squareInches = 10;
