@@ -1,4 +1,4 @@
-import { LengthUnit, WeightUnit, VolumeUnit, AreaUnit, SpeedUnit, TimeUnit, TemperatureUnit, convertUnits } from '../src/measurement-unit-converter'
+import { LengthUnit, WeightUnit, VolumeUnit, AreaUnit, SpeedUnit, TimeUnit, TemperatureUnit, AngleUnit, convertUnits } from '../src/measurement-unit-converter'
 
 describe('convert-units', () => {
     test('should convert meters to feets', () => {
@@ -72,4 +72,14 @@ describe('convert-units', () => {
 
         expect(actualMeters).toBeCloseTo(expectedMeters);
     });
+
+    test('should convert Milliradians to Circles', () => {
+        const milliradians = 10;
+        const expectedCircles = 10*(1/(2*Math.PI*1000)) // 0.0015915494309189536
+
+        const actualCircles = convertUnits(milliradians, AngleUnit.MILLIRADIAN, AngleUnit.CIRCLE);
+
+        expect(actualCircles).toBeCloseTo(expectedCircles);
+    });
+
 });
