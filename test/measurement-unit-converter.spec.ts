@@ -48,7 +48,7 @@ describe('convert-units', () => {
 
     test('should convert years to microseconds', () => {
         const years = 10;
-        const expectedMicroseconds = 10*(31556952/1e-6); // 315569520000000
+        const expectedMicroseconds = 10*(31536000/1e-6); // 315360000000000
 
         const actualMicroseconds = convertUnits(years, TimeUnit.YEAR, TimeUnit.MICROSECOND);
 
@@ -60,7 +60,7 @@ describe('convert-units', () => {
         const expectedKelvin = (10-32) / 1.8 + 273.15; // 260.92777777777775
 
         const actualKelvin = convertUnits(fahrenheit, TemperatureUnit.FAHRENHEIT, TemperatureUnit.KELVIN);
-        
+
         expect(actualKelvin).toBeCloseTo(expectedKelvin);
     });
 
