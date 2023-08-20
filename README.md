@@ -86,17 +86,36 @@ console.log(`${meters} meters are ${feets} feets`); // Output: "10 meters are 32
 ```
 | Enum LengthUnit |
 | --- |
-| KILOMETER |
-| METER |
+| ANGSTROM |
+| ASTRONOMICAL_UNIT |
+| BARLEYCORN |
+| CABLE |
 | CENTIMETER |
-| MILLIMETER |
-| MICROMETER |
-| NANOMETER |
-| MILE |
-| YARD |
+| CHAIN |
+| DECIMETER |
+| ELL |
+| FATHOM |
 | FOOT |
+| FOOT_US_SURVEY |
+| FURLONG |
+| HAND |
+| HECTOMETER |
 | INCH |
+| KILOMETER |
+| LIGHT_YEAR |
+| METER |
+| MICROMETER |
+| MIL |
+| MILE |
+| MILLIMETER |
+| NANOMETER |
 | NAUTICAL_MILE |
+| PARSEC |
+| PICA |
+| PICOMETER |
+| VARA_CASTELLANA |
+| VARA_CONUQUERA |
+| YARD |
 #### Mass
 ```typescript
 const pounds = 10;
@@ -123,11 +142,32 @@ console.log(`${kilometersPerHour} kilometers per hour are ${metersPerSecond} met
 ```
 | Enum SpeedUnit |
 | --- |
+| CENTIMETER_PER_HOUR |
+| CENTIMETER_PER_MINUTE |
+| CENTIMETER_PER_SECOND |
+| EARTHS_VELOCITY |
+| FOOT_PER_HOUR |
+| FOOT_PER_MINUTE |
+| FOOT_PER_SECOND |
 | KILOMETER_PER_HOUR |
+| KILOMETER_PER_MINUTE |
+| KILOMETER_PER_SECOND |
+| KNOT |
+| MACH |
+| METER_PER_HOUR |
+| METER_PER_MINUTE |
 | METER_PER_SECOND |
 | MILE_PER_HOUR |
-| KNOT |
-| FOOT_PER_SECOND |
+| MILE_PER_MINUTE |
+| MILE_PER_SECOND |
+| MILLIMETER_PER_HOUR |
+| MILLIMETER_PER_MINUTE |
+| MILLIMETER_PER_SECOND |
+| NAUTICAL_MILE_PER_DAY |
+| NAUTICAL_MILE_PER_HOUR |
+| YARD_PER_HOUR |
+| YARD_PER_MINUTE |
+| YARD_PER_SECOND |
 #### Temperature
 ```typescript
 const fahrenheit = 10;
@@ -145,22 +185,32 @@ console.log(`${fahrenheit} fahrenheit are ${kelvin} kelvin`); // Output: "10 fah
 ```typescript
 const years = 10;
 const microseconds = convertUnits(years, TimeUnit.YEAR, TimeUnit.MICROSECOND);
-console.log(`${years} years are ${microseconds} microseconds`); // Output: "10 years are 315569520000000 microseconds"
+console.log(`${years} years are ${microseconds} microseconds`); // Output: "10 years are 315360000000000 microseconds"
 ```
 | Enum TimeUnit |
 | --- |
-| NANOSECOND |
-| MICROSECOND |
-| MILLISECOND |
-| SECOND |
-| MINUTE |
-| HOUR |
-| DAY |
-| WEEK |
-| MONTH |
-| YEAR |
-| DECADE |
 | CENTURY |
+| DAY |
+| DECADE |
+| FEMTOSECOND |
+| FORTNIGHT |
+| HOUR |
+| MICROSECOND |
+| MILLENNIUM |
+| MILLISECOND |
+| MINUTE |
+| MONTH |
+| MONTH_SYNODIC |
+| NANOSECOND |
+| PICOSECOND |
+| SECOND |
+| SHAKE |
+| WEEK |
+| YEAR |
+| YEAR_GREGORIAN |
+| YEAR_JULIAN |
+| YEAR_LEAP |
+| YEAR_TROPICAL |
 #### Volume
 ```typescript
 const pints = 10;
