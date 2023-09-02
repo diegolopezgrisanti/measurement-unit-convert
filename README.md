@@ -124,16 +124,31 @@ console.log(`${pounds} pounds are ${kilograms} kilograms`); // Output: "10 pound
 ```
 | Enum WeightUnit |
 | --- |
-| TONNE |
-| KILOGRAM |
+| CARAT |
+| DECAGRAM |
+| EARTH_MASS |
+| FEMTOGRAM |
+| GRAIN |
 | GRAM |
-| MILLIGRAM |
-| MICROGRAM |
+| HECTOGRAM |
+| HUNDREDWEIGHT_UK |
+| HUNDREDWEIGHT_US |
+| KILOGRAM |
+| KILOTON |
 | LONG_TON |
-| SHORT_TON |
-| STONE |
-| POUND |
+| MEGATONNE |
+| MICROGRAM |
+| MILLIGRAM |
+| NANOGRAM |
 | OUNCE |
+| PICOGRAM |
+| POUND |
+| SHORT_TON |
+| SLUG |
+| SOLAR_MASS |
+| STONE_UK |
+| STONE_US |
+| TONNE |
 #### Speed
 ```typescript
 const kilometersPerHour = 10;

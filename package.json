@@ -1,6 +1,6 @@
 {
   "name": "measurement-unit-converter",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "It is a npm package for converting units, including Angle, Area, Length, Mass, Speed, Temperature, Time, Volume",
   "keywords": [
     "units",
