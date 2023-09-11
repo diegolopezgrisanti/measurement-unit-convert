@@ -19,11 +19,11 @@ describe('convert-units', () => {
         expect(actualGrams).toBeCloseTo(expectedGrams);
     });
 
-    test('should convert cubic meters to gallons', () => {
+    test('should convert cubic meters to gallons US', () => {
         const cubicMeter = 10;
         const expectedGallons = 10*(1000/3.78541178397347); // 2641.720523599998
 
-        const actualGallons = convertUnits(cubicMeter, VolumeUnit.CUBIC_METER, VolumeUnit.GALLON);
+        const actualGallons = convertUnits(cubicMeter, VolumeUnit.CUBIC_METER, VolumeUnit.GALLON_US);
 
         expect(actualGallons).toBeCloseTo(expectedGallons);
     });
