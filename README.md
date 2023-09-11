@@ -228,16 +228,49 @@ console.log(`${years} years are ${microseconds} microseconds`); // Output: "10 y
 | YEAR_TROPICAL |
 #### Volume
 ```typescript
-const pints = 10;
-const cubicCentimeters = convertUnits(pints, VolumeUnit.PINT, VolumeUnit.CUBIC_CENTIMETER);
-console.log(`${pints} pints are ${cubicCentimeters} cubic centimeters`); // Output: "10 pints are 5682.61 cubic centimeters"
+const pintsUK = 10;
+const cubicCentimeters = convertUnits(pintsUK, VolumeUnit.PINT_UK, VolumeUnit.CUBIC_CENTIMETER);
+console.log(`${pintsUK} pints UK are ${cubicCentimeters} cubic centimeters`); // Output: "10 pints UK are 5682.61249997643 cubic centimeters"
 ```
 | Enum VolumeUnit |
 | --- |
-| CUBIC_METER |
-| LITER |
-| GALLON |
-| PINT |
+| ACRE_FOOT |
+| BARREL_OIL |
+| BARREL_UK |
+| BARREL_US |
+| CENTILITER |
 | CUBIC_CENTIMETER |
+| CUBIC_DECAMETER |
+| CUBIC_DECIMETER |
 | CUBIC_FOOT |
 | CUBIC_INCH |
+| CUBIC_KILOMETER |
+| CUBIC_METER |
+| CUBIC_MILE |
+| CUBIC_MILLIMETER |
+| CUBIC_YARD |
+| CUP_UK |
+| CUP_US |
+| DECALITER |
+| DECILITER |
+| DRAM |
+| FLUID_OUNCE_UK |
+| FLUID_OUNCE_US |
+| GALLON_UK |
+| GALLON_US |
+| GIGALITER |
+| GILL_UK |
+| GILL_US |
+| KILOLITER |
+| LITER |
+| MEGALITER |
+| MICROLITER |
+| MILLILITER |
+| NANOLITER |
+| PICOLITER |
+| PINT_UK |
+| PINT_US |
+| QUART_UK |
+| QUART_US |
+| TABLESPOON |
+| TEASPOON |
